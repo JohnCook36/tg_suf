@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tg-suf"
+version = "0.1.0"
+description = "Local Telegram news reader with resumable speech playback prototype"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+telegram = ["telethon>=1.36,<2"]
+
+[project.scripts]
+tg-suf = "tg_suf.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tg_suf*"]
+
+[tool.setuptools.package-data]
+tg_suf = ["web/*"]

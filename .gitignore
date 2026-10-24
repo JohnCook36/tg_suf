@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.local/
+*.session
+*.session-journal
+*.session-wal
+*.session-shm
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.sqlite3
+*.db
+*.zip
+.DS_Store
