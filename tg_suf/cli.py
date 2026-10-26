@@ -117,6 +117,7 @@ def main(argv: list[str] | None = None) -> int:
     serve = sub.add_parser("serve")
     serve.add_argument("--no-browser", action="store_true")
     sub.add_parser("status")
+    sub.add_parser("alice-serve", help="Локальный backend приватного навыка Алисы")
     args = parser.parse_args(argv)
     try:
         if args.command == "login":
@@ -134,6 +135,10 @@ def main(argv: list[str] | None = None) -> int:
             start(open_browser=not args.no_browser)
         elif args.command == "status":
             _status()
+        elif args.command == "alice-serve":
+            from .alice_server import serve_alice
+            serve_alice()
+
         return 0
     except (ValueError, RuntimeError, ActiveQueueError) as exc:
         print(f"Ошибка: {exc}", file=sys.stderr)
