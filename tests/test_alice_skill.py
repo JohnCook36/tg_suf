@@ -125,7 +125,7 @@ class AliceSkillTests(unittest.TestCase):
             char_offset=5, action="pause", expected_revision=cp["revision"],
         )
         answer = self.say("дальше", 1)
-        self.assertIn("Сначала скажи читай", answer["text"])
+        self.assertIn("скажи: читай", answer["text"])
         self.assertEqual(self.db.current()["char_offset"], 5)
 
 
