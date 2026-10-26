@@ -13,7 +13,7 @@ def load_dotenv(path: Path | None = None) -> None:
             continue
         key, value = line.split("=", 1)
         key = key.strip()
-        if key in {"TG_API_ID", "TG_API_HASH", "TG_SUF_DATA_DIR"}:
+        if key in {"TG_API_ID", "TG_API_HASH", "TG_SUF_DATA_DIR", "ALICE_WEBHOOK_SECRET", "ALICE_ALLOWED_USER_ID", "ALICE_ALLOWED_APPLICATION_ID"}:
             os.environ.setdefault(key, value.strip().strip('"').strip("'"))
 
 
